@@ -1,39 +1,50 @@
-import React from 'react';
+import { Link } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
+import React, { useState } from 'react';
 import { Container, Navbar } from 'react-bulma-components';
 import { INavBar } from '../../typings/components/NavBar';
 
+
 export const NavBar = ({}: INavBar) => {
+  const { Brand, Burger, Container: NavBarContainer, Item, Menu } = Navbar;
+  const [showMenu, setShowMenu] = useState(false);
+
+  const handleClick = () => {
+    setShowMenu(!showMenu);
+  };
+
   return (
-    <Navbar>
+    <Navbar backgroundColor="primary-light" active={showMenu}>
       <Container>
-        <Navbar.Brand>
-          <Navbar.Item renderAs="a" href="#">
-            <img
-              src="https://bulma.io/images/bulma-logo.png"
-              alt="Bulma: a modern CSS framework based on Flexbox"
-              width="112"
-              height="28"
+        <Brand>
+          <Item renderAs="a" href="#">
+            <StaticImage
+              src="../../images/3784_Vinay Gopalaiah_01.png"
+              alt="Vinay Gopalaiah Brand Logo"
+              width={80}
+              height={80}
+              placeholder='blurred'
+              layout='fixed'
             />
-          </Navbar.Item>
-          <Navbar.Burger />
-        </Navbar.Brand>
-        <Navbar.Menu>
-          <Navbar.Container>
-            <Navbar.Item href="#">
-              <Navbar.Link>First</Navbar.Link>
-              <Navbar.Dropdown>
-                <Navbar.Item href="#">Subitem 1</Navbar.Item>
-                <Navbar.Item href="#">Subitem 2</Navbar.Item>
-                <Navbar.Divider />
-                <Navbar.Item href="#">After divider</Navbar.Item>
-              </Navbar.Dropdown>
-            </Navbar.Item>
-            <Navbar.Item href="#">Second</Navbar.Item>
-          </Navbar.Container>
-          <Navbar.Container>
-            <Navbar.Item href="#">At the end</Navbar.Item>
-          </Navbar.Container>
-        </Navbar.Menu>
+          </Item>
+          <Burger onClick={handleClick} />
+        </Brand>
+        <Menu>
+          <NavBarContainer>
+            <Item className="has-text-primary" renderAs={Link} to="/">
+              About Me
+            </Item>
+            <Item renderAs={Link} to="/" className="has-text-primary">
+              Projects
+            </Item>
+            <Item renderAs={Link} to="/" className="has-text-primary">
+              Blogs
+            </Item>
+            <Item renderAs={Link} to="/" className="has-text-primary">
+              Contact
+            </Item>
+          </NavBarContainer>
+        </Menu>
       </Container>
     </Navbar>
   );

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { NavBar } from '../components/navbar/NavBar';
-import '../styles/bulma_variables.scss';
+import '../styles/_all.scss';
 
 // markup
 const IndexPage = () => {

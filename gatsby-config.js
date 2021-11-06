@@ -7,8 +7,9 @@ require('ts-node').register({
 
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
+    siteUrl: "https://vinaygpersonalsite.gatsbyjs.io",
     title: "vinayg-personal-site",
+    description: "A personal site for Vinay Gopalaiah. A full stack nodeJS developer, currently working in React, Gatsby & Python",
   },
   plugins: [
     "gatsby-plugin-styled-components",
