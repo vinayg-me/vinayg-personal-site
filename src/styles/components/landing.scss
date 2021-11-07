@@ -1,0 +1,42 @@
+.landingSection {
+  .landingBox {
+    height: 80vh;
+    .landingAncestor {
+        height: 100%;
+      .landingParent {
+        .landingChild {
+          min-height: 50vh;
+          .profilePicContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: -130px;
+            .imageContainer {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              margin-top: -8rem;
+              .gatsby-image-wrapper img {
+                width: 225px;
+                height: 225px;
+                border-radius: 50%;
+              }
+            }
+            .aboutDescriptionColumn {
+              width: 80%;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              padding: 3rem;
+              p {
+                line-height: 2rem;
+                text-align: justify;
+                width: 60%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
