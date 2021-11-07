@@ -51,7 +51,7 @@ export const Landing = ({}: ILanding) => {
         <Columns>
           <Column className="profilePicContainer" paddingless>
             <div className="imageContainer">
-              {vinayImage && <GatsbyImage image={vinayImage} alt="Test" />}
+              {vinayImage && <GatsbyImage image={vinayImage} alt="Vinay Profile Picture" />}
             </div>
             <div className="headlineContainer">
               <Heading

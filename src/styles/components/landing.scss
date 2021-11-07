@@ -2,10 +2,16 @@
   @media screen and (max-width: $tablet) {
     padding-top: 4rem;
   }
+  @media screen and (min-width: $tablet) and (max-width: $widescreen) {
+    margin-top: 6rem;
+  }
   .landingBox {
     min-height: 65vh;
     @media screen and (max-width: $mobile) {
-      height: auto;
+      height: 90vh;
+    }
+    @media screen and (min-width: $tablet) and (max-width: $widescreen) {
+      height: 80vh;
     }
     .profilePicContainer {
       display: flex;
@@ -32,6 +38,9 @@
         margin-top: -8rem;
         @media screen and (max-width: $tablet) {
           margin-top: -4rem;
+        }
+        @media screen and (min-width: $tablet) and (max-width: $widescreen) {
+          margin-top: -6rem;
         }
         .gatsby-image-wrapper img {
           width: 225px;
