@@ -1,39 +1,49 @@
 .landingSection {
+  @media screen and (max-width: $tablet) {
+    padding-top: 4rem;
+  }
   .landingBox {
-    height: 80vh;
-    .landingAncestor {
-        height: 100%;
-      .landingParent {
-        .landingChild {
-          min-height: 50vh;
-          .profilePicContainer {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: -130px;
-            .imageContainer {
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              margin-top: -8rem;
-              .gatsby-image-wrapper img {
-                width: 225px;
-                height: 225px;
-                border-radius: 50%;
-              }
-            }
-            .aboutDescriptionColumn {
-              width: 80%;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              padding: 3rem;
-              p {
-                line-height: 2rem;
-                text-align: justify;
-                width: 60%;
-              }
-            }
+    min-height: 60vh;
+    .profilePicContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: -130px;
+      .imageContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: -8rem;
+        @media screen and (max-width: $tablet) {
+          margin-top: -4rem;
+        }
+        .gatsby-image-wrapper img {
+          width: 225px;
+          height: 225px;
+          border-radius: 50%;
+          @media screen and (max-width: $tablet) {
+            width: 125px;
+            height: 125px;
+          }
+        }
+      }
+      .aboutDescriptionColumn {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 3rem;
+        @media screen and (max-width: $tablet) {
+          padding: 1rem;
+          width: 100%;
+        }
+        p {
+          line-height: 2rem;
+          text-align: justify;
+          width: 75%;
+          @media screen and (max-width: $tablet) {
+            width: 100%;
+            line-height: 1.75rem;
           }
         }
       }

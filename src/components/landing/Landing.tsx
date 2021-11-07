@@ -1,8 +1,9 @@
 import React from 'react';
-import { Box, Columns, Section, Tile, Heading } from 'react-bulma-components';
+import { Box, Columns, Section, Heading } from 'react-bulma-components';
 import { ILanding } from '../../typings/components/Landing';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { ReactChild } from 'react';
 
 export const Landing = ({}: ILanding) => {
   const { Column } = Columns;
@@ -22,58 +23,104 @@ export const Landing = ({}: ILanding) => {
   `);
   const vinayImage = getImage(landingImageData.file);
 
+  const TextContent = ({ children }: { children: ReactChild }) => {
+    return (
+      <Heading
+        tablet={{
+          textSize: 4,
+        }}
+        mobile={{
+          textSize: 4,
+        }}
+        desktop={{
+          textSize: 3,
+        }}
+        renderAs="p"
+        textColor="primary"
+      >
+        {children}
+      </Heading>
+    );
+  };
+
   return (
     <Section className="landingSection">
       <Box className="landingBox">
-        <Tile kind="ancestor" className="landingAncestor">
-          <Tile kind="parent" className="landingParent">
-            <Tile kind="child" className="landingChild">
-              <Columns>
-                <Column className="profilePicContainer" paddingless>
-                  <div className="imageContainer">
-                    {vinayImage && <GatsbyImage image={vinayImage} alt="Test" />}
-                  </div>
-                  <div className="headlineContainer">
-                    <Heading
-                      size={2}
-                      renderAs="h1"
-                      textColor="primary"
-                      textWeight="bold"
-                      textAlign="center"
+        <Columns>
+          <Column className="profilePicContainer" paddingless>
+            <div className="imageContainer">
+              {vinayImage && <GatsbyImage image={vinayImage} alt="Test" />}
+            </div>
+            <div className="headlineContainer">
+              <Heading
+                renderAs="h1"
+                textColor="primary"
+                textWeight="bold"
+                textAlign="center"
+                tablet={{
+                  textSize: 3,
+                }}
+                mobile={{
+                  textSize: 3,
+                }}
+                desktop={{
+                  textSize: 2,
+                }}
+              >
+                Vinay Gopalaiah
+              </Heading>
+              <div className="socialIconsContainer">
+                <TextContent>
+                    <a
+                        href="https://www.linkedin.com/in/vinay-gopalaiah-b9a8b9a6/"
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
-                      Vinay Gopalaiah
-                    </Heading>
-                    <div className="socialIconsContainer">
-                        <p>Follow Me: <span></span></p>
-                    </div>
-                    <Heading size={3} renderAs="h2" textColor="accent" textAlign="center">
-                      Principal Software Engineer @ Codeparva Technologies Pvt Ltd
-                    </Heading>
-                  </div>
-                  <Columns>
-                    <Column className="aboutDescriptionColumn">
-                      <Heading size={3} renderAs="p" textColor="primary">
-                        I am a software engineer with a passion for building scalable, maintainable
-                        and secure applications. I have worked on a wide range of technologies and
-                        have a proven track record of delivering high quality products to customers.
-                      </Heading>
-                      <Heading size={3} renderAs="p" textColor="primary">
-                        7+ years of experience in software development, architecting and delivering
-                        high quality websites, mobile applications and dashboards in various
-                        industries.
-                      </Heading>
-                      <Heading size={3} renderAs="p" textColor="primary">
-                        A full stack developer, well versed with modern web technologies and frameworks, including React,
-                        Node, GraphQL, Angular, Django. I love to learn new technologies and am
-                        always looking to improve my skills.
-                      </Heading>
-                    </Column>
-                  </Columns>
-                </Column>
-              </Columns>
-            </Tile>
-          </Tile>
-        </Tile>
+                        <i className="fab fa-linkedin-in" />
+                    </a>
+                </TextContent>
+              </div>
+              <Heading
+                tablet={{
+                  textSize: 4,
+                }}
+                mobile={{
+                  textSize: 4,
+                }}
+                desktop={{
+                  textSize: 3,
+                }}
+                renderAs="h2"
+                textColor="accent"
+                textAlign="center"
+              >
+                Principal Software Engineer @ Codeparva Technologies Pvt Ltd
+              </Heading>
+            </div>
+            <Columns>
+              <Column className="aboutDescriptionColumn">
+                <TextContent>
+                  I am a Principal Software Engineer with an experience of 7+ years in software
+                  development, architecting and delivering high quality websites and mobile
+                  applications (Hybrid) in various industries. I have a proven track record of
+                  delivering high quality products to customers. I have extensively worked with
+                  Small to Medium sized companies and enjoyed the challenges of building scalable,
+                  performant and cost effective solutions.
+                </TextContent>
+                <TextContent>
+                  Well versed with modern web technologies and frameworks, including React, Node,
+                  GraphQL, Angular, Django. I love to learn new technologies and am always looking
+                  to improve my skills.
+                </TextContent>
+                <TextContent>
+                  Outside work, I love to read self help books, technical articles, watch movies,
+                  play board games and playing outdoor sports like Football, Cricket & Volleyball. I
+                  enjoy taking occassional road trips to explore new places & local culture.
+                </TextContent>
+              </Column>
+            </Columns>
+          </Column>
+        </Columns>
       </Box>
     </Section>
   );
