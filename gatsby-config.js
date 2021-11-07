@@ -7,9 +7,16 @@ require('ts-node').register({
 
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://vinaygpersonalsite.gatsbyjs.io",
-    title: "vinayg-personal-site",
-    description: "A personal site for Vinay Gopalaiah. A full stack nodeJS developer, currently working in React, Gatsby & Python",
+    siteUrl: "https://vinayg.me",
+    title: "Vinay Gopalaiah - Full Stack React Developer",
+    description: `I am a Principal Software Engineer with an experience of 7+ years in software
+                  development, architecting and delivering high quality websites and mobile
+                  applications(Hybrid) in various industries.I have a proven track record of
+                  delivering high quality products to customers.I have extensively worked with
+                  Small to Medium sized companies and enjoyed the challenges of building scalable,
+    performant and cost effective solutions.`
+    ,
+    author: "Vinay Gopalaiah"
   },
   plugins: [
     "gatsby-plugin-styled-components",
