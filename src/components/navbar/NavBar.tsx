@@ -17,30 +17,42 @@ export const NavBar = ({}: INavBar) => {
     <Navbar backgroundColor="primary-light" active={showMenu}>
       <Container>
         <Brand>
-          <Item renderAs="a" href="#">
+          <Item renderAs={Link} to="/">
             <StaticImage
               src="../../images/3784_Vinay Gopalaiah_01.png"
               alt="Vinay Gopalaiah Brand Logo"
               width={80}
               height={80}
-              placeholder='blurred'
-              layout='fixed'
+              placeholder="blurred"
+              layout="fixed"
             />
           </Item>
           <Burger onClick={handleClick} />
         </Brand>
         <Menu>
           <NavBarContainer>
-            <Item className="has-text-primary" renderAs={Link} to="/">
-              About Me
-            </Item>
-            <Item renderAs={Link} to="/" className="has-text-primary">
+            <Item
+              renderAs={Link}
+              to="/projects"
+              className="has-text-primary"
+              activeClassName="is-link-active"
+            >
               Projects
             </Item>
-            <Item renderAs={Link} to="/" className="has-text-primary">
+            <Item
+              renderAs={Link}
+              to="/blogs"
+              className="has-text-primary"
+              activeClassName="is-link-active"
+            >
               Blogs
             </Item>
-            <Item renderAs={Link} to="/" className="has-text-primary">
+            <Item
+              renderAs={Link}
+              to="/contactUs"
+              className="has-text-primary"
+              activeClassName="is-link-active"
+            >
               Contact
             </Item>
           </NavBarContainer>
