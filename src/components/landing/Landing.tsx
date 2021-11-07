@@ -10,7 +10,7 @@ import { FaGithub, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 export const Landing = ({}: ILanding) => {
   const { Column } = Columns;
   const landingImageData = useStaticQuery(graphql`
-    query MyQuery {
+    query landingImageQuery {
       file(relativePath: { eq: "Vinay Linkedin New Enhanced.jpg" }) {
         childImageSharp {
           gatsbyImageData(

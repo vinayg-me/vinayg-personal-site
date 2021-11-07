@@ -2,22 +2,17 @@
   @media screen and (max-width: $tablet) {
     padding-top: 4rem;
   }
-  @media screen and (min-width: $tablet) and (max-width: $widescreen) {
+  @media screen and (min-width: $tablet) {
     margin-top: 6rem;
   }
   .landingBox {
-    min-height: 65vh;
-    @media screen and (max-width: $mobile) {
-      height: 90vh;
-    }
-    @media screen and (min-width: $tablet) and (max-width: $widescreen) {
-      height: 80vh;
-    }
+    display: flex;
+    flex-direction: column;
+    flex: 1;
     .profilePicContainer {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-bottom: -130px;
       @media screen and (max-width: $tablet) {
         margin-bottom: 0px;
       }
