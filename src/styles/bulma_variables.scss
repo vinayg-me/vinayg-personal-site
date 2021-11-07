@@ -1,0 +1,55 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+// If need, change your variables before importing Bulma
+// Font Variables
+$family-primary: 'Montserrat Alternates', sans-serif;
+
+// Palette Variables
+$primary: #14213d;
+$primary-invert: findColorInvert($primary);
+$accent: #fca311;
+$grey: #e5e5e5;
+$white: #ffffff;
+$text: $white;
+$text-dark: $primary;
+$light-blue: #5277c6;
+$custom-colors: (
+  'accent': $accent,
+  'light-blue': $light-blue,
+);
+
+// Font Size Variables
+$size-1: 3rem;
+$size-2: 2.25rem;
+$size-3: 1.5rem;
+$size-4: 1rem;
+$size-5: 0.75rem;
+$size-6: 0.5rem;
+$size-7: 0.25rem;
+
+// Global
+$gap: 32px;
+
+// Breakpoints
+$smallMobile: 320px;
+$mobile: 480px;
+// 960, 1152, and 1344 have been chosen because they are divisible by both 12 and 16
+$tablet: 769px;
+// 960px container + 4rem
+$desktop: 960px + (2 * $gap);
+// 1152px container + 4rem
+$widescreen: 1152px + (2 * $gap);
+$widescreen-enabled: true;
+// 1344px container + 4rem
+$fullhd: 1344px + (2 * $gap);
+$fullhd-enabled: true;
+
+// Body Variables
+$body-background-color: $primary;
+$body-size: 16px;
+
+// Custom Classes
+
+
+@import '~bulma/bulma.sass';

@@ -1,0 +1,18 @@
+.LayoutContainer {
+  .LayoutContent {
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .mainBody {
+      display: flex;
+      height: 100%;
+    }
+  }
+  .footer {
+      position: relative;
+      bottom: 0px;
+      display: flex;
+      width: 100%;
+  }
+}
