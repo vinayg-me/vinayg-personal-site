@@ -1,9 +1,11 @@
 import React from 'react';
-import { Box, Columns, Section, Heading } from 'react-bulma-components';
+import { Box, Columns, Section, Heading, Icon } from 'react-bulma-components';
 import { ILanding } from '../../typings/components/Landing';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { ReactChild } from 'react';
+import { IconContext } from 'react-icons';
+import { FaGithub, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 export const Landing = ({}: ILanding) => {
   const { Column } = Columns;
@@ -70,15 +72,52 @@ export const Landing = ({}: ILanding) => {
                 Vinay Gopalaiah
               </Heading>
               <div className="socialIconsContainer">
-                <TextContent>
+                <IconContext.Provider
+                  value={{
+                    size: '2rem',
+                  }}
+                >
+                  <Icon size="large">
                     <a
-                        href="https://www.linkedin.com/in/vinay-gopalaiah-b9a8b9a6/"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                      href="https://www.linkedin.com/in/vinaygopalaiah/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Follow me on Linkedin"
                     >
-                        <i className="fab fa-linkedin-in" />
+                      <FaLinkedin />
                     </a>
-                </TextContent>
+                  </Icon>
+                  <Icon size="large">
+                    <a
+                      href="https://twitter.com/gopalaiahvinay"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Follow me on Twitter"
+                    >
+                      <FaTwitter />
+                    </a>
+                  </Icon>
+                  <Icon size="large">
+                    <a
+                      href="https://www.instagram.com/gopalvinay/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Follow me on Instagram"
+                    >
+                      <FaInstagram />
+                    </a>
+                  </Icon>
+                  <Icon size="large">
+                    <a
+                      href="https://github.com/vinayg-me"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Follow me on Github"
+                    >
+                      <FaGithub />
+                    </a>
+                  </Icon>
+                </IconContext.Provider>
               </div>
               <Heading
                 tablet={{
@@ -91,10 +130,19 @@ export const Landing = ({}: ILanding) => {
                   textSize: 3,
                 }}
                 renderAs="h2"
-                textColor="accent"
                 textAlign="center"
+                textColor="light-blue"
               >
-                Principal Software Engineer @ Codeparva Technologies Pvt Ltd
+                Principal Software Engineer @{' '}
+                <a
+                  className="cp-link"
+                  href="https://codeparva.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="CodeParva Technologies"
+                >
+                  CodeParva Technologies Pvt Ltd
+                </a>
               </Heading>
             </div>
             <Columns>
@@ -114,8 +162,13 @@ export const Landing = ({}: ILanding) => {
                 </TextContent>
                 <TextContent>
                   Outside work, I love to read self help books, technical articles, watch movies,
-                  play board games and playing outdoor sports like Football, Cricket & Volleyball. I
-                  enjoy taking occassional road trips to explore new places & local culture.
+                  play board games and love playing outdoor sports like Football, Cricket &
+                  Volleyball. I enjoy taking occassional road trips to explore new places & local
+                  culture.
+                </TextContent>
+                <TextContent>
+                  I like mentoring and helping others learn new skills and technologies. Please feel
+                  free to reach out to me if you have any questions or want to work together.
                 </TextContent>
               </Column>
             </Columns>
